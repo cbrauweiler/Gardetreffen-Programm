@@ -46,7 +46,7 @@
 	if($settings_delay != '0') {
 		echo '
 			<tr>
-				<td colspan="2"><br /><strong>Verzögerung: '.$settings_delay.'Minute(n)</strong></td>
+				<td colspan="2"><br /><strong>Verzögerung: '.$settings_delay.' Minute(n)</strong></td>
 			</tr>
 		';
 	}
