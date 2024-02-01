@@ -1,9 +1,9 @@
 <?php
 # mySQL Environment
 $sql_servername = 'localhost';
-$sql_user = 'sqlgarde';
-$sql_pass = '.!gg)!6iHfWXSg5H';
-$sql_db = 'gardetreffen';
+$sql_user = 'sqlusername';
+$sql_pass = 'sqlpassword';
+$sql_db = 'dbname';
 
 # mySQL Connect
 $mysqli = new mysqli($sql_servername, $sql_user, $sql_pass, $sql_db);
