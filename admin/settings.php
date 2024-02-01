@@ -6,31 +6,31 @@
 	<form class="col s12" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="title" name="title" type="text" class="validate" value="<?php echo $settings_title; ?>">
+				<input id="title" name="title" type="text" class="validate" value="<?php echo $settings_title; ?>" required>
 				<label for="title">Seitentitel</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="location" name="location" type="text" class="validate" value="<?php echo $settings_location; ?>">
+				<input id="location" name="location" type="text" class="validate" value="<?php echo $settings_location; ?>" required>
 				<label for="location">Austragungsort</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="date" name="date" type="text" class="datepicker" value="<?php echo $settings_date; ?>">
+				<input id="date" name="date" type="text" placeholder="YYYY-MM-DD" class="datepicker" value="<?php echo $settings_date; ?>" required>
 				<label for="date">Datum</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="color_palette" name="color_palette" type="text" class="validate" value="<?php echo $settings_color_palette; ?>">
+				<input id="color_palette" name="color_palette" type="text" class="validate" value="<?php echo $settings_color_palette; ?>" required>
 				<label for="color_palette">Farbpalette</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="background_color" name="background_color" type="text" class="validate" value="<?php echo $settings_background_color; ?>">
+				<input id="background_color" name="background_color" type="text" class="validate" value="<?php echo $settings_background_color; ?>" required>
 				<label for="background_color">Hintergrundfarbe</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="primary_color" name="primary_color" type="text" class="validate" value="<?php echo $settings_primary_color; ?>">
+				<input id="primary_color" name="primary_color" type="text" class="validate" value="<?php echo $settings_primary_color; ?>" required>
 				<label for="primary_color">Primärfarbe</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="secondary_color" name="secondary_color" type="text" class="validate" value="<?php echo $settings_secondary_color; ?>">
+				<input id="secondary_color" name="secondary_color" type="text" class="validate" value="<?php echo $settings_secondary_color; ?>" required>
 				<label for="secondary_color">Sekundärfarbe</label>
 			</div>
 			<div class="input-field col s12">

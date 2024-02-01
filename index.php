@@ -210,17 +210,21 @@ if(isset($_POST['save'])) {
 										</button>
 									</div>
 								</div>
-								
-								<br />
-								
+							</form>
+						</div>
+						
+						<br />
+						
+						<div class="row">
+							<form class="col s12 center" method="POST" action="'.$_SERVER['PHP_SELF'].'">								
 								<h5>Neue Tanzgruppe hinzufügen</h5>
 								<div class="row">
 									<div class="input-field col s3">
-										<input id="auftrittszeit" name="auftrittszeit" type="text" placeholder="hh:mm" class="validate">
+										<input id="auftrittszeit" name="auftrittszeit" type="text" placeholder="hh:mm" class="validate" required>
 										<label for="auftrittszeit">Auftrittszeit</label>
 									</div>
 									<div class="input-field col s6">
-										<input id="tanzgruppe" name="tanzgruppe" type="text" class="validate">
+										<input id="tanzgruppe" name="tanzgruppe" type="text" class="validate" required>
 										<label for="tanzgruppe">Tanzgruppe</label>
 									</div>
 									<div class="input-field col s3">
