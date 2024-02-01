@@ -245,7 +245,7 @@ if(isset($_POST['save'])) {
 
 		<footer class="page-footer <?php echo $settings_color_palette; ?>">
 			<div class="container">
-				
+				© 2024 <a href="https://christian-brauweiler.de" target="_blank">Christian Brauweiler</a>
 			</div>
 		</footer>
 		
