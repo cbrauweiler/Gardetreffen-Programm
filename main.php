@@ -9,13 +9,18 @@
 	
 	$ct = $_GET['time'];
 	$isadm = $_GET['isadm'];
-	if($isadm == true) { $colspan = '3'; }else { $colspan = '2'; }
+	if($isadm == true) {
+		$colspan = '3';
+		$query = "SELECT `id`, DATE_FORMAT(time, \"%H:%i\") as `time`, groupname FROM `list` ORDER BY `time` ASC";
+	}
+	else {
+		$colspan = '2';
+		$query = "SELECT `id`, DATE_FORMAT(time, \"%H:%i\") as `time`, groupname FROM `list` WHERE `time`>='$ct' ORDER BY `time` ASC";
+	}
 	
 	$x = '1';
 
 	// Auftritte auslesen
-	$query = "SELECT `id`, DATE_FORMAT(time, \"%H:%i\") as `time`, groupname FROM `list` WHERE `time`>='$ct' ORDER BY `time` ASC";
-	//echo $query;
 	if($result = mysqli_query($mysqli, $query)) {
 		while($row = $result->fetch_array(MYSQLI_BOTH)) {
 			
@@ -25,7 +30,6 @@
 			
 			// Ausgabe
 			echo '
-				<form class="col s12 center" method="POST" action="'.$_SERVER['PHP_SELF'].'?id='.$list_id.'">
 				<tr>
 					<td>'; if($x == '1') { echo '<strong>'; } echo $list_time .' Uhr'; if($x == '1') { echo '</strong>'; } echo '</td>
 					<td>'; if($x == '1') { echo '<strong>'; } echo $list_groupname; if($x == '1') { echo '</strong>'; } echo '</td>
@@ -34,11 +38,11 @@
 			if($isadm == true) {
 				echo '
 					<td>
-						<div class="input-field col s3">
-							<button class="btn waves-effect waves-light" type="submit" name="delete">
+						<form class="col s12 center" method="POST" action="index.php?id='.$list_id.'">
+							<button class="btn waves-effect waves-light" type="submit" name="delete" onclick="return window.confirm(\'Soll dieser Datensatz wirklich gelöscht werden?\');">
 								<i class="material-icons center">delete</i>
 							</button>
-						</div>
+						</form>
 					</td>
 				';
 			}
@@ -47,7 +51,6 @@
 			
 			echo '
 				</tr>
-				</form>
 			';
 			
 			$x++;

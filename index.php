@@ -38,11 +38,19 @@ if(isset($_POST['p10'])) {
 }
 
 # Neuen Auftritt speichern
-if(isset($_POST['save'])) {	
+if(isset($_POST['save'])) {
 	$auftrittszeit = $_POST['auftrittszeit'];
 	$tanzgruppe = $_POST['tanzgruppe'];
 	
 	$query = "INSERT INTO `list` (`time`, `groupname`) VALUES ('$auftrittszeit', '$tanzgruppe')";
+	mysqli_query($mysqli, $query);
+}
+
+# Auftritt entfernen
+if(isset($_POST['delete'])) {
+	$id = $_GET['id'];
+	
+	$query = "DELETE FROM `list` WHERE `id`='$id'";
 	mysqli_query($mysqli, $query);
 }
 
