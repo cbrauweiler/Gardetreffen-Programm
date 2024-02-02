@@ -45,6 +45,12 @@ if(isset($_POST['save'])) {
 	$query = "INSERT INTO `list` (`time`, `groupname`) VALUES ('$auftrittszeit', '$tanzgruppe')";
 	mysqli_query($mysqli, $query);
 }
+
+# is admin
+if(!empty($_SESSION['id'])) {
+	$isadm = true;
+}
+else $isadm = false;
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +96,7 @@ if(isset($_POST['save'])) {
 			function mySQLData(){
 				
 				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.open("GET", "main.php?time=" + "<?php echo $ct; ?>", true);
+				xmlhttp.open("GET", "main.php?time=" + "<?php echo $ct; ?>" + "&isadm=" + "<?php echo $isadm; ?>", true);
 				xmlhttp.onreadystatechange=function() {
 					
 					if (xmlhttp.readyState==4) {
@@ -171,6 +177,7 @@ if(isset($_POST['save'])) {
 					  <tr>
 						<th>Auftrittszeit</th>
 						<th>Tanzgruppe</th>
+						<?php if(!empty($_SESSION['id'])) { echo '<th></th>'; } ?>
 					  </tr>
 					</thead>
 					<tbody id="sqloutput">
@@ -216,7 +223,7 @@ if(isset($_POST['save'])) {
 						<br />
 						
 						<div class="row">
-							<form class="col s12 center" method="POST" action="'.$_SERVER['PHP_SELF'].'">								
+							<form class="col s12 center" method="POST" action="'.$_SERVER['PHP_SELF'].'">
 								<h5>Neue Tanzgruppe hinzufügen</h5>
 								<div class="row">
 									<div class="input-field col s3">
