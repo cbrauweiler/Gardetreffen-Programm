@@ -170,29 +170,16 @@ else $isadm = false;
 				<!-- Header -->
 				<div class="row">
 					<h3><strong>
-						<div class="col s4 center"><?php echo date("d. M Y", strtotime($settings_date)); ?></div>
-						<div class="col s4 center" id="MyClockDisplay"><?php if(isset($_GET['devtime'])) { echo $_GET['devtime']; } ?></div>
-						<div class="col s4 center"><?php echo $settings_location; ?></div>
+						<div class="col s12 m4 center"><?php echo date("d. M Y", strtotime($settings_date)); ?></div>
+						<div class="col s12 m4 center" id="MyClockDisplay"><?php if(isset($_GET['devtime'])) { echo $_GET['devtime']; } ?></div>
+						<div class="col s12 m4 center"><?php echo $settings_location; ?></div>
 					</strong></h3>
 				</div>
 
 				<br />
 
 				<!-- Tabelle -->
-				<h<?php echo $settings_table_font_size;?>>
-				<table class="striped centered">
-					<thead>
-					  <tr>
-						<th>Auftrittszeit</th>
-						<th>Tanzgruppe</th>
-						<?php if(!empty($_SESSION['id'])) { echo '<th></th>'; } ?>
-					  </tr>
-					</thead>
-					<tbody id="sqloutput">
-						
-					</tbody>
-				</table>
-				</h<?php echo $settings_table_font_size;?>>
+				<div id="sqloutput"></div>
 
 				<?php
 				// Formular für neuen Auftritt & Verzögerung
@@ -204,22 +191,22 @@ else $isadm = false;
 							<form class="col s12 center" method="POST" action="'.$_SERVER['PHP_SELF'].'">
 								<h5>Verzögerungszeit ändern</h5>
 								<div class="row">
-									<div class="input-field col s3">
+									<div class="input-field col s12 m3">
 										<button class="btn waves-effect waves-light" type="submit" name="m10">10 Minuten
 											<i class="material-icons left">remove</i>
 										</button>
 									</div>
-									<div class="input-field col s3">
+									<div class="input-field col s12 m3">
 										<button class="btn waves-effect waves-light" type="submit" name="m5">5 Minuten
 											<i class="material-icons left">remove</i>
 										</button>
 									</div>
-									<div class="input-field col s3">
+									<div class="input-field col s12 m3">
 										<button class="btn waves-effect waves-light" type="submit" name="p5">5 Minuten
 											<i class="material-icons left">add</i>
 										</button>
 									</div>
-									<div class="input-field col s3">
+									<div class="input-field col s12 m3">
 										<button class="btn waves-effect waves-light" type="submit" name="p10">10 Minuten
 											<i class="material-icons left">add</i>
 										</button>
@@ -234,15 +221,15 @@ else $isadm = false;
 							<form class="col s12 center" method="POST" action="'.$_SERVER['PHP_SELF'].'">
 								<h5>Neue Tanzgruppe hinzufügen</h5>
 								<div class="row">
-									<div class="input-field col s3">
+									<div class="input-field col s12 m3">
 										<input id="auftrittszeit" name="auftrittszeit" type="text" placeholder="hh:mm" class="validate" required>
 										<label for="auftrittszeit">Auftrittszeit</label>
 									</div>
-									<div class="input-field col s6">
+									<div class="input-field col s12 m6">
 										<input id="tanzgruppe" name="tanzgruppe" type="text" class="validate" required>
 										<label for="tanzgruppe">Tanzgruppe</label>
 									</div>
-									<div class="input-field col s3">
+									<div class="input-field col s12 m3">
 										<button class="btn waves-effect waves-light" type="submit" name="save">Hinzufügen
 											<i class="material-icons right">send</i>
 										</button>

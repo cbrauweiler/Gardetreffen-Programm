@@ -19,6 +19,22 @@
 	}
 	
 	$x = '1';
+	
+	echo '
+		<div class="row">
+		<h'.$settings_table_font_size.'>
+		<table class="striped centered responsive-table">
+			<thead>
+			  <tr>
+				<th>Auftrittszeit</th>
+				<th>Tanzgruppe</th>
+	';
+	if($isadm == true) { echo '<th>&nbsp;</th>'; }
+	echo '
+			  </tr>
+			</thead>
+			<tbody>
+	';
 
 	// Auftritte auslesen
 	if($result = mysqli_query($mysqli, $query)) {
@@ -59,17 +75,26 @@
 	
 	// Letztes Update
 	echo '
-		<tr>
-			<td colspan="'.$colspan.'"><h6>Letztes Update: '.date("H:i:s", time()).' Uhr</h6></td>
-		</tr>
+				</tbody>
+			</table>
+			</h'.$settings_table_font_size.'>
+		</div>
+		
+		<div class="row">
+			<div class="col s12 center">
+				<h6>Letztes Update: '.date("H:i:s", time()).' Uhr</h6>
+			</div>
+		</div>
 	';
 	
 	// Verzögerung anzeigen
 	if($settings_delay != '0') {
 		echo '
-			<tr>
-				<td colspan="'.$colspan.'"><br /><strong>Verzögerung: '.$settings_delay.' Minute(n)</strong><br />&nbsp;</td>
-			</tr>
+			<div class="row">
+				<div class="col s12 center">
+					<h'.$settings_table_font_size.'><strong>Verzögerung: '.$settings_delay.' Minute(n)</strong><br />&nbsp;</h'.$settings_table_font_size.'>
+				</div>
+			</div>
 		';
 	}
 
