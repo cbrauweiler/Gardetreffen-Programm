@@ -23,7 +23,7 @@
 	echo '
 		<div class="row">
 		<h'.$settings_table_font_size.'>
-		<table class="striped centered responsive-table">
+		<table class="striped centered">
 			<thead>
 			  <tr>
 				<th>Auftrittszeit</th>

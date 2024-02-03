@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 include("mysql.php");
 
 # Admin Password
-$adminpasswd = 'Test2024!';
+$adminpasswd = 'RWH2024!';
 $adminpasswd = password_hash($adminpasswd, PASSWORD_DEFAULT);
 
 # Timezone & Timestamp
